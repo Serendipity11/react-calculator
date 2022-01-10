@@ -1,6 +1,10 @@
 import React from "react";
-import { Container } from "./Styled";
+import { Container, Screen } from "./Styled";
 
 export default function Calculator() {
-  return <Container />;
+  return (
+    <Container>
+      <Screen></Screen>
+    </Container>
+  );
 }
