@@ -34,3 +34,11 @@ export const Current = styled.div`
   color: white;
   font-size: 2.5rem;
 `;
+
+export const Button = styled.button`
+  cursor: pointer;
+  font-size: 2 rem;
+  border: 1px outset white;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.75);
+`;

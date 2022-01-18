@@ -5,8 +5,8 @@ export default function Calculator() {
   return (
     <Container>
       <Screen>
-        <Previous></Previous>
-        <Current></Current>
+        <Previous>10 +</Previous>
+        <Current>10</Current>
       </Screen>
     </Container>
   );
