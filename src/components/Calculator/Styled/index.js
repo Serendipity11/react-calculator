@@ -41,4 +41,7 @@ export const Button = styled.button`
   border: 1px outset white;
   outline: none;
   background-color: rgba(255, 255, 255, 0.75);
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
 `;
