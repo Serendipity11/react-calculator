@@ -9,7 +9,7 @@ export default function Calculator() {
         <Current>10</Current>
       </Screen>
       <Button gridSpan={2}>AC</Button>
-      <Button></Button>
+      <Button control>DEL</Button>
       <Button operation>÷</Button>
       <Button></Button>
       <Button></Button>
@@ -23,9 +23,11 @@ export default function Calculator() {
       <Button></Button>
       <Button></Button>
       <Button operation>-</Button>
+      <Button period>.</Button>
       <Button></Button>
-      <Button></Button>
-      <Button gridSpan={2}>=</Button>
+      <Button gridSpan={2} equals>
+        =
+      </Button>
     </Container>
   );
 }
