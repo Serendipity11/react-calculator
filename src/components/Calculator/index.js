@@ -6,8 +6,8 @@ export default function Calculator() {
 
   const appendValue = (el) => {
     const value = el.target.getAttribute("data");
+    if (value === "." && current.includes(".")) return;
     setCurrent(current + value);
-    console.log(value);
   };
 
   return (
