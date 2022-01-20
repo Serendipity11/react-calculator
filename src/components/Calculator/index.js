@@ -4,13 +4,17 @@ import { Container, Screen, Previous, Current, Button } from "./Styled";
 export default function Calculator() {
   const [current, setCurrent] = useState("");
 
-  const appendValue = (el) => {};
+  const appendValue = (el) => {
+    const value = el.target.getAttribute("data");
+    setCurrent(current + value);
+    console.log(value);
+  };
 
   return (
     <Container>
       <Screen>
         <Previous>10 +</Previous>
-        <Current>10</Current>
+        <Current>{current}</Current>
       </Screen>
       <Button gridSpan={2}>AC</Button>
       <Button control>DEL</Button>
@@ -45,7 +49,9 @@ export default function Calculator() {
         3
       </Button>
       <Button operation>-</Button>
-      <Button period>.</Button>
+      <Button period data={"."} onClick={appendValue}>
+        .
+      </Button>
       <Button data={"0"} onClick={appendValue}>
         0
       </Button>
