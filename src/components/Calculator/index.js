@@ -2,22 +2,37 @@ import React, { useState } from "react";
 import { Container, Screen, Previous, Current, Button } from "./Styled";
 
 export default function Calculator() {
+  const [previus, setPrevius] = useState("");
   const [current, setCurrent] = useState("");
-
+  const [operation, setOperation] = useState("");
   const appendValue = (el) => {
     const value = el.target.getAttribute("data");
     if (value === "." && current.includes(".")) return;
     setCurrent(current + value);
   };
 
+  const handleDelete = () => {
+    setCurrent(String(current).slice(0, -1));
+  };
+
+  const handleAllClear = () => {
+    setCurrent("");
+    setPrevius("");
+    setOperation("");
+  };
+
   return (
     <Container>
       <Screen>
-        <Previous>10 +</Previous>
+        <Previous>
+          {previus} {operation}
+        </Previous>
         <Current>{current}</Current>
       </Screen>
       <Button gridSpan={2}>AC</Button>
-      <Button control>DEL</Button>
+      <Button onClick={handleDelete} control>
+        DEL
+      </Button>
       <Button operation>÷</Button>
       <Button data={"7"} onClick={appendValue}>
         7
