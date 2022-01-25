@@ -29,7 +29,9 @@ export default function Calculator() {
         </Previous>
         <Current>{current}</Current>
       </Screen>
-      <Button gridSpan={2}>AC</Button>
+      <Button onClick={handleAllClear} gridSpan={2}>
+        AC
+      </Button>
       <Button onClick={handleDelete} control>
         DEL
       </Button>
