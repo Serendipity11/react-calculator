@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Screen, Previous, Current, Button } from "./Styled";
 
 export default function Calculator() {
-  const [previus, setPrevius] = useState("");
+  const [previous, setPrevious] = useState("");
   const [current, setCurrent] = useState("");
   const [operation, setOperation] = useState("");
   const appendValue = (el) => {
@@ -17,15 +17,27 @@ export default function Calculator() {
 
   const handleAllClear = () => {
     setCurrent("");
-    setPrevius("");
+    setPrevious("");
     setOperation("");
   };
+
+  const chooseOperation = (el) => {
+    if (current === "") return;
+    if (previous !== "") {
+      let value = compute();
+      setPrevious(value);
+    } else {
+      setPrevious(current);
+    }
+  };
+
+  const compute = () => {};
 
   return (
     <Container>
       <Screen>
         <Previous>
-          {previus} {operation}
+          {previous} {operation}
         </Previous>
         <Current>{current}</Current>
       </Screen>
@@ -47,7 +59,7 @@ export default function Calculator() {
       <Button data={"9"} onClick={appendValue}>
         9
       </Button>
-      <Button data={"÷"} onClick={chooseOperation} operation>
+      <Button data={"x"} onClick={chooseOperation} operation>
         x
       </Button>
       <Button data={"4"} onClick={appendValue}>
@@ -59,7 +71,9 @@ export default function Calculator() {
       <Button data={"6"} onClick={appendValue}>
         6
       </Button>
-      <Button operation>+</Button>
+      <Button data={"+"} onClick={chooseOperation} operation>
+        +
+      </Button>
       <Button data={"1"} onClick={appendValue}>
         1
       </Button>
@@ -69,7 +83,9 @@ export default function Calculator() {
       <Button data={"3"} onClick={appendValue}>
         3
       </Button>
-      <Button operation>-</Button>
+      <Button data={"-"} onClick={chooseOperation} operation>
+        -
+      </Button>
       <Button period data={"."} onClick={appendValue}>
         .
       </Button>
