@@ -5,8 +5,10 @@ export default function Calculator() {
   const [previous, setPrevious] = useState("");
   const [current, setCurrent] = useState("");
   const [operation, setOperation] = useState("");
+
   const appendValue = (el) => {
     const value = el.target.getAttribute("data");
+
     if (value === "." && current.includes(".")) return;
     setCurrent(current + value);
   };
@@ -29,6 +31,7 @@ export default function Calculator() {
     } else {
       setPrevious(current);
     }
+
     setCurrent("");
     setOperation(el.target.getAttribute("data"));
   };
@@ -48,11 +51,12 @@ export default function Calculator() {
     let currentNumber = parseFloat(current);
 
     if (isNaN(previousNumber) || isNaN(currentNumber)) return;
+
     switch (operation) {
       case "÷":
         result = previousNumber / currentNumber;
         break;
-      case "x":
+      case "×":
         result = previousNumber * currentNumber;
         break;
       case "+":
@@ -64,6 +68,8 @@ export default function Calculator() {
       default:
         return;
     }
+
+    return result;
   };
 
   return (
@@ -74,7 +80,7 @@ export default function Calculator() {
         </Previous>
         <Current>{current}</Current>
       </Screen>
-      <Button onClick={handleAllClear} gridSpan={2}>
+      <Button onClick={handleAllClear} gridSpan={2} control>
         AC
       </Button>
       <Button onClick={handleDelete} control>
@@ -92,8 +98,8 @@ export default function Calculator() {
       <Button data={"9"} onClick={appendValue}>
         9
       </Button>
-      <Button data={"x"} onClick={chooseOperation} operation>
-        x
+      <Button data={"×"} onClick={chooseOperation} operation>
+        ×
       </Button>
       <Button data={"4"} onClick={appendValue}>
         4
@@ -119,7 +125,7 @@ export default function Calculator() {
       <Button data={"-"} onClick={chooseOperation} operation>
         -
       </Button>
-      <Button period data={"."} onClick={appendValue}>
+      <Button data={"."} period onClick={appendValue}>
         .
       </Button>
       <Button data={"0"} onClick={appendValue}>
