@@ -35,7 +35,9 @@ export default function Calculator() {
       <Button onClick={handleDelete} control>
         DEL
       </Button>
-      <Button operation>÷</Button>
+      <Button data={"÷"} onClick={chooseOperation} operation>
+        ÷
+      </Button>
       <Button data={"7"} onClick={appendValue}>
         7
       </Button>
@@ -45,7 +47,9 @@ export default function Calculator() {
       <Button data={"9"} onClick={appendValue}>
         9
       </Button>
-      <Button operation>x</Button>
+      <Button data={"÷"} onClick={chooseOperation} operation>
+        x
+      </Button>
       <Button data={"4"} onClick={appendValue}>
         4
       </Button>
