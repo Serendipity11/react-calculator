@@ -29,6 +29,17 @@ export default function Calculator() {
     } else {
       setPrevious(current);
     }
+    setCurrent("");
+    setOperation(el.target.getAttribute("data"));
+  };
+
+  const equals = () => {
+    let value = compute();
+    if (value == undefined || value == null) return;
+
+    setCurrent(value);
+    setPrevious("");
+    setOperation("");
   };
 
   const compute = () => {};
@@ -92,7 +103,7 @@ export default function Calculator() {
       <Button data={"0"} onClick={appendValue}>
         0
       </Button>
-      <Button gridSpan={2} equals>
+      <Button gridSpan={2} onClick={equals} equals>
         =
       </Button>
     </Container>
