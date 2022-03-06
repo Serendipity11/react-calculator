@@ -39,7 +39,7 @@ export default function Calculator() {
 
   const equals = () => {
     let value = compute();
-    if (value == undefined || value == null) return;
+    if (value === undefined || value === null) return;
 
     setCurrent(value);
     setPrevious("");
