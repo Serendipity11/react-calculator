@@ -38,7 +38,7 @@ export const Current = styled.div`
 export const Button = styled.button`
   cursor: pointer;
   font-size: 2rem;
-  border: 1px outset white;
+  border: 0.2px outset white;
   outline: none;
   background-color: rgba(255, 255, 255, 0.75);
   &:hover {
@@ -46,10 +46,10 @@ export const Button = styled.button`
   }
 
   ${({ gridSpan }) => gridSpan && `grid-column:span ${gridSpan};`}
-  ${({ operation }) => operation && `background-color: gray;`}
-  ${({ control }) => control && `background-color: skyblue;`}
+  ${({ operation }) => operation && `background-color: #5D4CB5`}
+  ${({ control }) => control && `background-color: #C7C8C8`}
   ${({ equals }) =>
-    equals && `border-bottom-right-radius:10px; background-color: gray;`}
+    equals && `border-bottom-right-radius:10px; background-color: #F9C509`}
  ${({ period }) =>
-    period && `border-bottom-left-radius:10px; background-color: skyblue;`}
+    period && `border-bottom-left-radius:10px; background-color: #C7C8C8`}
 `;
