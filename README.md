@@ -1,5 +1,5 @@
 # Calculator
-I have built web application that performs arithmetic operations on numbers, it can do addition, subtraction, multiplication and division
+This is a web application that performs arithmetic operations on numbers, it can do addition, subtraction, multiplication and division
 
 <a href="https://focused-hamilton-4e91d1.netlify.app/" target="_blank"></a>
 <a href="https://focused-hamilton-4e91d1.netlify.app/" target="_blank"><img src="https://github.com/Serendipity11/creative-content/blob/main/calculator.png"/></a>
